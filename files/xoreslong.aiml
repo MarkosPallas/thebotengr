@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+	<!-- insert your AIML categories here -->
+ <category>
+     <pattern>^ longitude ^ <set>countries</set></pattern>
+     <template><star index="3"/>, has latitude <map name="xoreslong"><star index="3"/></map>.
+     </template>
+ </category>
+  <category>
+     <pattern>^ longitude ^ </pattern>
+     <template>Ask me for the latitude of a country.
+     </template>
+ </category>
+ 
+
+
+  <category>
+     <pattern>^ γεωγραφικό μήκος και πλάτος ^ <set>countries</set>^</pattern>
+     <template>Η χώρα <star index="3"/>, έχει γεωγραφικό μήκος <map name="xoreslong"><star index="3"/></map> και γεωγραφικό πλάτος <map name="xoreslan"><star index="3"/></map>.
+     </template>
+ </category>
+   <category>
+     <pattern>^ γεωγραφικό πλάτος και μήκος ^ <set>countries</set>^</pattern>
+     <template>Η χώρα <star index="3"/>, έχει γεωγραφικό πλάτος <map name="xoreslong"><star index="3"/></map> και γεωγραφικό μήκος <map name="xoreslan"><star index="3"/></map>.
+     </template>
+ </category>
+ 
+ 
+ <category>
+     <pattern>^ γεωγραφικό μήκος ^ <set>countries</set></pattern>
+     <template>Η χώρα <star index="3"/>, γεωγραφικό μήκος <map name="xoreslan"><star index="3"/></map>.
+     </template>
+ </category>
+  <category>
+     <pattern>^ γεωγραφικό μήκος ^ </pattern>
+     <template>Ρώτα με για το γεωγραφικό μήκος μιας χώρας.
+     </template>
+ </category>
+</aiml>

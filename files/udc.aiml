@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+<category><pattern>*</pattern>
+<template><srai>ASK USER RANDOM QUESTION</srai></template>
+</category>
+
+ <category>
+ <pattern>ASK USER RANDOM QUESTION</pattern>
+ <template>
+ <random>
+ <li>Ask me the population of a country.</li>
+ <li>Ask the population of a city.</li>
+ <li>Ask me the currency of a country.</li>
+ <li>I'm boring, ask me the prime minister of a country.</li>
+ <li>You can ask me the president of a country if you're boring.</li>
+ <li>Ask me in which continent are a country.</li>
+ <li>I know cities with largest population, ask me.</li>
+ <li>I know countries with the largest population, ask me.</li>
+ <li>I know countries with the smallest population, ask me.</li>
+ <li>I know cities with the smallest population, ask me.</li>
+ <li>Try asking me the latitude of a country.</li>
+ <li>Try asking me the longitude of a country.</li>
+ <li>You can ask me to tell you information about countries.</li>
+ <li>Ask me about the areas of a country.</li>
+ <li>Ask me anything you want to tell you about me.</li>
+ <li>Ρωτησέ με τον πληθυσμό μιας χώρας.</li>
+ <li>Ρωτησέ για τον πληθυσμό μιας πόλης.</li>
+ <li>Βαριέμαι, ρωτησέ με ποιός είναι ο πρωθυπουργός μιας χώρας.</li>
+ <li>Μπορείς να με ρωτήσεις τον πρόεδρο μιας χώρας αν βαριέσαι.</li>
+ <li>Ρωτησέ με σε ποια ήπειρο βρίσκεται μια χώρα.</li>
+ <li>Γνωρίζω τις πόλεις με το μεγαλύτερο πληθυσμό, ρωτησέ με.</li>
+ <li>Γνωρίζω τις πόλεις με τον μικρότερο πληθυσμό, ρώτα με.</li>
+ <li>Γνωρίζω τις χώρες με το μεγαλύτερο πληθυσμό, ρωτήστε με.</li>
+ <li>Γνωρίζω τις χώρες με τον μικρότερο πληθυσμό, ρώτα με.</li>
+ <li>Γνωρίζω πόλεις με τον μικρότερο πληθυσμό, ρωτήστε με.</li>
+ <li>Δοκίμασε να με ρωτήσεις το γεωγραφικό πλάτος μιας χώρας.</li>
+ <li>Δοκίμασε να με ρωτήσεις το γεωγραφικό μήκος μιας χώρας.</li>
+ <li>Μπορείς να μου ζητήσεις να σου πω πληροφορίες για οποιαδήποτε χώρα.</li>
+ <li>Ρωτησέ με για την έκταση μιας χώρας.</li>
+ <li>Ρωτησέ με οτιδήποτε θέλεις να μάθεις για μένα.</li>
+ </random>
+ </template>
+ </category>
+
+</aiml>

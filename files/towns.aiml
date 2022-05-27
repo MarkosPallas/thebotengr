@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+    
+<category>
+    <pattern>In which country is <set>poleis</set>^</pattern>
+    <template><star/>, is in <map name="poleisxores"><star/></map>.
+    </template>
+</category>
+ 
+ <category>
+    <pattern>What about towns</pattern>
+    <template>Do you like Paris</template>  
+   </category>
+<category>
+    <pattern>Yes</pattern>
+    <that>Do you like Paris</that>
+    <template>Nice, I like Paris too.</template>
+</category>
+<category>
+    <pattern>No</pattern>
+    <that>Do you like Paris</that>
+    <template>Ok! But I like Paris very much.</template>
+</category> 
+<category>
+    <pattern>What about cities</pattern>
+    <template>Do you like Berlin</template>  
+   </category>
+<category>
+    <pattern>Yes</pattern>
+    <that>Do you like Berlin</that>
+    <template>Nice, I like Berlin too.</template>
+</category>
+<category>
+    <pattern>No</pattern>
+    <that>Do you like Berlin</that>
+    <template>Ok! But I like Berlin very much.</template>
+</category> 
+
+<category>
+    <pattern>Is <set>poleis</set> city of <set>countries</set>^</pattern>
+    <template> <star/> is city of <map name="poleisxores"><star/></map>.</template>
+    </category>
+    <category>
+    <pattern>Is <set>poleis</set> city of <set>ipeiroi</set>^</pattern>
+    <template> <star/> is city of <map name="poleisxores"><star/></map> .</template>
+ </category>
+ <category>
+    <pattern>Is <set>poleis</set> city of ^</pattern>
+    <template>No, <star/> is a city of <map name="poleisxores"><star/></map>.</template>
+</category>
+ <category>
+    <pattern>Is <set>poleis</set> city ^</pattern>
+    <template>Yes <star/> is a city of <map name="poleisxores"><star/></map>.</template>
+</category>
+<category>
+    <pattern>^ <set>poleis</set> city ^</pattern>
+    <template>Yes <star index="2"/> is a city of <map name="poleisxores"><star index="2"/></map>.</template>
+</category>
+<category>
+    <pattern>^ city of <set>countries</set>^</pattern>
+    <template>Ask the name of a real city.</template>
+</category>
+
+
+
+ <category>
+      <pattern>What about travelling in cities</pattern>
+      <template>Which is the most interesting city you have been</template>  
+  </category>
+  <category>
+      <pattern>I have been in *</pattern>
+      <that>Which is the most interesting city you have been</that>
+      <template>Nice, I like <star/> too.</template>
+   </category>
+     <category>
+      <pattern><set>poleis</set></pattern>
+      <that>Which is the most interesting city you have been</that>
+      <template>Nice, I like <star/> too.</template>
+   </category>
+
+<category>
+      <pattern>I like *</pattern>
+      <template>
+         I also like <star/>.
+      </template>
+   </category>
+   
+<category>
+    <pattern>Is <set>capitals</set> capital of<set>countries</set>^</pattern>
+    <template>
+    <star/> is capital of <map name="capital2countries"><star/></map>.
+    </template>
+</category>
+<category>
+    <pattern>Is * capital of ^</pattern>
+    <template>No, it is not</template>
+</category>
+
+<category>
+    <pattern>TELL ME ABOUT  *</pattern>
+    <template>
+    <think><set name="poleis"><star/></set></think>
+    Here is some information about<formal><star/></formal>.
+    <button><text>Click here</text>
+    <url>https://en.wikipedia.org/wiki/<star/></url>
+    </button>
+    </template>
+</category>
+<category>
+    <pattern>SHOW ME A MAP OF *</pattern>
+    <template>
+    <think><set name="poleis"><star/></set></think>
+    Here is a map of <formal><star/></formal>.
+    <button><text>Click here</text>
+    <url>https://www.google.co.uk/maps?q=<star/></url>
+    </button>
+    </template>
+</category>
+<category>
+<pattern>WHAT IS THE WEATHER IN *</pattern>
+    <template>
+    <think><set name="poleis"><star/></set></think>
+    I hope it's a nice day in <formal><star/></formal>.
+    <button><text>Click here for the forecast</text>
+    <url>https://www.weather-forecast.com/locations/<star/>/forecasts/latest</url>
+    </button>
+    </template>
+</category>
+<category>
+    <pattern>TELL ME ABOUT IT</pattern>
+    <template>
+    <condition name="it">
+    <li value="*">
+        <srai>Tell me about<get name="it"/></srai>
+    </li>
+    <li>Tell you about what?</li>
+    </condition>
+    </template>
+</category>
+<category>
+    <pattern>SHOW ME A MAP OF IT</pattern>
+    <template>
+    <condition name="it">
+    <li value="*">
+    <srai>Show me a map of<get name="it"/></srai>
+    </li>
+    <li>A map of where?</li>
+    </condition>
+</template>
+</category>
+    <category>
+    <pattern>WHAT IS THE WEATHER LIKE THERE</pattern>
+    <template>
+    <condition name="it">
+    <li value="*">
+    <srai>What is the weather in<get name="it"/></srai>
+    </li>
+    <li>The weather where?</li>
+    </condition>
+    </template>
+</category>
+<category>
+    <pattern>*</pattern>
+    <that>TELL YOU ABOUT WHAT</that>
+    <template>
+    <srai>Tell me about<star/></srai>
+    </template>
+</category>
+<category>
+    <pattern>*</pattern>
+    <that>A MAP OF WHERE</that>
+    <template><srai>show me a map of<star/></srai>
+    </template>
+</category>
+<category>
+    <pattern>*</pattern>
+    <that>THE WEATHER WHERE</that>
+    <template>
+    <srai>what is the weather in<star/></srai>
+    </template>
+</category>
+
+<category>
+    <pattern>Σε ποια χώρα βρίσκεται η πόλη <set>poleis</set>^</pattern>
+    <template>H πόλη <star/>, βρίσκεται στην χώρα <map name="poleisxores"><star/></map>.
+    </template>
+</category>
+<category>
+    <pattern>Που βρίσκεται η πόλη <set>poleis</set>^</pattern>
+    <template>H πόλη <star/>, βρίσκεται στην χώρα <map name="poleisxores"><star/></map>.
+    </template>
+</category>
+ 
+<category>
+    <pattern>Σχετικά με τις πόλεις</pattern>
+    <template>Σου αρέσει η Αθήνα?</template>  
+</category>
+   
+<category>
+    <pattern>Ναι</pattern>
+    <that>Σου αρέσει η Αθήνα?</that>
+    <template>Ωραία και εμένα μου αρέσει το Αθήνα.</template>
+</category>
+   
+<category>
+    <pattern>Όχι</pattern>
+    <that>Σου αρέσει η Αθήνα?</that>
+    <template>Καλώς, αλλά εμένα μου αρέσει η Αθήνα</template>
+</category> 
+
+<category>
+ <pattern>Είναι <set>arthra</set> <set>poleis</set> πόλη</pattern>
+ <template>Ναι είναι πόλη.</template>
+ </category>
+ 
+<category>
+ <pattern>Είναι ^ πόλη</pattern>
+ <template>Όχι δεν νομίζω ότι είναι.</template>
+</category>
+
+<category>
+    <pattern>Μου αρέσει *</pattern>
+    <template>
+    και εμένα μου αρέσει <star/>.
+    </template>
+   </category>
+<category>
+    <pattern> Είναι η πόλη * πρωτεύουσα στην χώρα * </pattern>
+    <template>
+    Ναι η πόλη <star index = "1"/> είναι πρωτεύουσα <star index = "2"/>
+    </template>
+</category>
+
+<category>
+    <pattern>^ για <set>arthra</set> <set>poleis</set></pattern>
+    <template>
+    <think>
+    <set name="poleis"><star index="3"/></set>
+    </think>
+    Ορίστε μερικές πληροφορίες σχετικά για την πόλη <formal><star index="3"/></formal>.
+    <button>
+    <text>Πάτησε Εδώ</text><url>https://en.wikipedia.org/wiki/<star index="3"/></url>
+    </button>
+    </template>
+</category>
+<category>
+    <pattern>^ χάρτη <set>arthra</set> <set>poleis</set></pattern>
+    <template>
+    <think>
+    <set name="poleis"><star index="3"/></set>
+    </think>
+    Ορίστε ο χάρτης της πόλης <formal><star index="3"/></formal>.
+    <button>
+    <text>Πάτησε Εδώ</text><url>https://www.google.co.uk/maps?q=<star index="3"/></url>
+    </button>
+    </template>
+</category>
+<category>
+    <pattern>Πες μου για τον καιρό στην πόλη *</pattern>
+    <template>
+    <think>
+    <set name="poleis"><star/></set>
+    </think>
+    Ελπίζω να είναι μια καλή μέρα στην πόλη <formal><star/></formal>.
+    <button>
+    <text>Πάτησε εδώ για την πρόγνωση</text>
+    <url>https://www.weather-forecast.com/locations/<star/>/forecasts/latest</url>
+    </button>
+    </template>
+</category>
+<category>
+    <pattern>Πες μου σχετικά με αυτό</pattern>
+    <template>
+    <condition name="it">
+    <li value="*"><srai>Πες μου σχετικά με αυτό<get name="it"/></srai></li>
+    <li>Να σου πω σχετικά με τι?</li>
+    </condition>
+    </template>
+    </category>
+<category>
+<pattern>Εμφάνισε ένα χάρτη της πόλης</pattern>
+    <template>
+    <condition name="it">
+    <li value="*"><srai>Εμφάνισε ένα χάρτη της πόλης<get name="it"/></srai></li>
+    <li>¨Ενα χάρτη ποιας πόλης?</li>
+    </condition>
+    </template>
+</category>
+<category>
+    <pattern>Πως είναι ο καιρός σε αυτή την πόλη?</pattern>
+    <template>
+    <condition name="it">
+    <li value="*"><srai>Πως είναι ο καιρός στην πόλη?<get name="it"/></srai></li>
+    <li>Ο καιρός σε ποια πόλη?</li>
+    </condition>
+    </template>
+</category>
+    <category>
+    <pattern>*</pattern>
+    <that>Πες μου σχετικά με αυτό</that>
+    <template>
+    <srai>Πες μου σχετικά με αυτό<star/></srai>
+    </template>
+</category>
+<category>
+    <pattern>*</pattern>
+    <that>Ένα χάρτη μιας πόλης</that>
+    <template>
+    <srai>Εμφάνισε τον χάρτη της πόλης<star/></srai>
+    </template>
+</category>
+<category>
+    <pattern>*</pattern>
+    <that>Πως είναι ο καιρός</that>
+    <template>
+    <srai>Πως είναι ο καιρός στην πόλη<star/></srai>
+</template>
+</category>
+ 
+
+</aiml>
+

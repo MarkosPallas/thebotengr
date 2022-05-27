@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+
+
+    <category>
+         <pattern>WHAT IS THE POPULATION OF *</pattern>
+         <template>
+             <think>
+                 <set var="findcountry"><map name="country2num"><star/></map></set>
+                 <set var="countrydetails"><map name="num2country"><get var="findcountry"/></map></set>
+             </think>
+             <condition var="countrydetails"/>
+                <li value="unknown">Sorry but i have no details for that country.</li>
+                <li>
+                    <srai>SetCountryDetails <get var="countrydetails"/></srai>
+                    <get name="countryname"/>'s population is <get name="population"/>
+                </li>
+            <condition/>
+         </template>
+    </category>
+    
+    <category>
+        <pattern>SETCOUNTRYDETAILS * SPLITTER *</pattern>
+        <template>
+            <think>
+                <set name="countryname"><star/></set>
+                <set name="population"><star index="2"/></set>
+            </think>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>TELL ME * COUNTRIES WITH THE LARGEST POPULATION</pattern>
+        <template>
+            <think><set name="count">0</set></think>
+            <condition name="count">
+                <li><value><star/></value></li>
+                <li>
+                    <think>
+                        <set var="countrydetails"><map name="num2country"><get name="count"/></map></set>
+                        <set name="count"><map><name>successor</name><get name="count"/></map></set>
+                    </think>
+                    <srai>SetCountryDetails <get var="countrydetails"/></srai>
+                    <get name="countryname"/> - <get name="population"/><br/>
+                <loop/>    
+                </li>
+            </condition>    
+        </template>
+    </category>
+    
+    <category>
+        <pattern>TELL ME * COUNTRIES WITH THE SMALLEST POPULATION</pattern>
+        <template>
+            <think>
+                <set name="count">0</set>
+                <set name="list">234</set>
+            </think>
+            <condition name="count">
+                <li><value><star/></value></li>
+                <li>
+                    <think>
+                        <set var="countrydetails"><map name="num2country"><get name="list"/></map></set>
+                        <set name="list"><map name="predecessor"><get name="list"/></map></set>
+                        <set name="count"><map><name>successor</name><get name="count"/></map></set>
+                    </think>
+                    <srai>SetCountryDetails <get var="countrydetails"/></srai>
+                    <get name="countryname"/> - <get name="population"/><br/>
+                <loop/>    
+                </li>
+            </condition>
+        </template>
+    </category>
+    
+    
+    <category>
+         <pattern>WHAT IS THE POPULATION OF *</pattern>
+         <template>
+             <think>
+                 <set var="findcountry"><map name="country2numgr"><star/></map></set>
+                 <set var="countrydetails"><map name="num2countrygr"><get var="findcountry"/></map></set>
+             </think>
+             <condition var="countrydetails"/>
+                <li value="unknown">Sorry but i have no details for that country.</li>
+                <li>
+                    <srai>SetCountryDetails <get var="countrydetails"/></srai>
+                    <get name="countryname"/>'s population is <get name="population"/>
+                </li>
+            <condition/>
+         </template>
+    </category>
+    
+    <category>
+        <pattern>SETCOUNTRYDETAILS * SPLITTER *</pattern>
+        <template>
+            <think>
+                <set name="countryname"><star/></set>
+                <set name="population"><star index="2"/></set>
+            </think>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>ΠΕΣ ΜΟΥ * ΧΩΡΕΣ ΜΕ ΤΟΝ ΜΕΓΑΛΥΤΕΡΟ ΠΛΗΘΥΣΜΟ</pattern>
+        <template>
+            <think><set name="count">0</set></think>
+            <condition name="count">
+                <li><value><star/></value></li>
+                <li>
+                    <think>
+                        <set var="countrydetails"><map name="num2countrygr"><get name="count"/></map></set>
+                        <set name="count"><map><name>successor</name><get name="count"/></map></set>
+                    </think>
+                    <srai>SetCountryDetails <get var="countrydetails"/></srai>
+                    <get name="countryname"/> - <get name="population"/><br/>
+                <loop/>    
+                </li>
+            </condition>    
+        </template>
+    </category>
+    
+    <category>
+        <pattern>ΠΕΣ ΜΟΥ * ΧΩΡΕΣ ΜΕ ΤΟΝ ΜΙΚΡΟΤΕΡΟ ΠΛΗΘΥΣΜΟ</pattern>
+        <template>
+            <think>
+                <set name="count">0</set>
+                <set name="list">226</set>
+            </think>
+            <condition name="count">
+                <li><value><star/></value></li>
+                <li>
+                    <think>
+                        <set var="countrydetails"><map name="num2countrygr"><get name="list"/></map></set>
+                        <set name="list"><map name="predecessor"><get name="list"/></map></set>
+                        <set name="count"><map><name>successor</name><get name="count"/></map></set>
+                    </think>
+                    <srai>SetCountryDetails <get var="countrydetails"/></srai>
+                    <get name="countryname"/> - <get name="population"/><br/>
+                <loop/>    
+                </li>
+            </condition>
+        </template>
+    </category>
+    
+    
+    
+    
+    
+    
+    
+    
+        <category>
+        <pattern>Πες μου * χώρες με τον μεγαλύτερο πληθυσμό</pattern>
+        <template>
+            <think><set name="count">0</set></think>
+            <condition name="count">
+                <li><value><star/></value></li>
+                <li>
+                    <think>
+                        <set var="countrydetails"><map name="num2countrygr"><get name="count"/></map></set>
+                        <set name="count"><map><name>successor</name><get name="count"/></map></set>
+                    </think>
+                    <srai>SetCountryDetails <get var="countrydetails"/></srai>
+                    <get name="countryname"/> - <get name="population"/><br/>
+                <loop/>    
+                </li>
+            </condition>    
+        </template>
+    </category>
+    
+    <category>
+        <pattern>Πες μου * χώρες με τον μικρότερο πληθυσμό</pattern>
+        <template>
+            <think>
+                <set name="count">0</set>
+                <set name="list">226</set>
+            </think>
+            <condition name="count">
+                <li><value><star/></value></li>
+                <li>
+                    <think>
+                        <set var="countrydetails"><map name="num2countrygr"><get name="list"/></map></set>
+                        <set name="list"><map name="predecessor"><get name="list"/></map></set>
+                        <set name="count"><map><name>successor</name><get name="count"/></map></set>
+                    </think>
+                    <srai>SetCountryDetails <get var="countrydetails"/></srai>
+                    <get name="countryname"/> - <get name="population"/><br/>
+                <loop/>    
+                </li>
+            </condition>
+        </template>
+    </category>
+
+
+</aiml>

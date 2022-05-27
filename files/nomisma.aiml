@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+	<!-- insert your AIML categories here -->
+	 <category>
+     <pattern>^ the currency of <set>countries</set>^</pattern>
+     <template><star index="2"/>, has currency <map name="xoranomisma"><star index="2"/></map>.
+     </template>
+ </category>
+ <category>
+     <pattern>^ the currency of ^</pattern>
+     <template><star/>, is not a country, ask me the currency of a country</template>
+ </category>
+ 
+<category>
+    <pattern>Is <set>nomisma</set> a currency </pattern>
+    <template><star/> is a currency of <map name="nomisma2xora"><star/></map>.</template>
+</category>
+ 
+<category>
+    <pattern>Is * a currency ^</pattern>
+    <template>No, I don't think it is.</template>
+</category>
+
+<category>
+    <pattern>What about <set>nomisma</set>^</pattern>
+    <template>Do you have <star/>?</template>
+</category>
+
+<category>
+    <pattern>I have <set>nomisma</set></pattern>
+    <template>I also have <star/>.</template>
+</category>
+
+
+<category>
+    <pattern>TELL ME ABOUT *</pattern>
+    <template>
+    <think>
+    <set name="nomisma"><star/></set>
+    </think>
+    Here is some information about <formal><star/></formal>.
+    <button>
+    <text>Click here</text><url>https://en.wikipedia.org/wiki/<star/></url>
+    </button>
+</template>
+</category>
+
+
+<category>
+    <pattern>TELL ME ABOUT IT</pattern>
+    <template>
+    <condition name="it">
+    <li value="*"><srai>Tell me about<get name="it"/></srai></li>
+    <li>Tell you about what?</li>
+    </condition>
+    </template>
+</category>
+
+<category>
+    <pattern>*</pattern>
+    <that>TELL YOU ABOUT WHAT</that>
+    <template><srai>Tell me about<star/></srai></template>
+</category>
+
+ <category>
+     <pattern>Ποιο είναι το νόμισμα της χώρας<set>countries</set></pattern>
+     <template>Η χώρα <star/>, έχει νόμισμα <map name="xoranomisma"><star/></map>.
+     </template>
+ </category>
+  <category>
+     <pattern>^ νόμισμα ^ <set>countries</set></pattern>
+     <template>Η χώρα <star index="3"/>, έχει νόμισμα <map name="xoranomisma"><star index="3"/></map>.
+     </template>
+ </category>
+ 
+<category>
+    <pattern>Είναι το <set>nomisma</set> νόμισμα</pattern>
+    <template>Ναι, το <star/> είναι νόμισμα.</template>
+</category>
+<category>
+    <pattern>Είναι το <set>nomisma</set> νόμισμα </pattern>
+    <template>Το <star/> είναι νόμισμα της πόλης <map name="nomisma2xora"><star/></map>.</template>
+</category>
+ 
+<category>
+    <pattern>^ νόμισμα ^</pattern>
+    <template>Όχι δεν νομίζω ότι είναι.</template>
+</category>
+
+
+<category>
+    <pattern>Έχω νομίσματα *</pattern>
+    <template>Έχω επίσης νομίσματα <star/>.</template>
+</category>
+
+
+<category>
+<pattern>^ πληροφορίες για το νόμισμα *</pattern>
+    <template>
+    <think>
+    <set name="nomisma"><star index="2"/></set>
+    </think>
+    Ορίστε μερικές πληροφορίες σχτικά με το <formal><star index="2"/></formal>.
+    <button>
+    <text>Πάτησε εδώ</text>
+    <url>https://en.wikipedia.org/wiki/<star/></url>
+    </button>
+    </template>
+</category>
+
+</aiml>

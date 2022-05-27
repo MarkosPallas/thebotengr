@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+<category>
+        <pattern>SETCITYDETAILS * SPLITTER *</pattern>
+        <template>
+            <think>
+                <set name="cityname"><star/></set>
+                <set name="population"><star index="2"/></set>
+            </think>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>TELL ME * CITIES WITH THE LARGEST POPULATION</pattern>
+        <template>
+            <think><set name="count">0</set></think>
+            <condition name="count">
+                <li><value><star/></value></li>
+                <li>
+                    <think>
+                        <set var="citydetails"><map name="num2poleis"><get name="count"/></map></set>
+                        <set name="count"><map><name>successor</name><get name="count"/></map></set>
+                    </think>
+                    <srai>SetCityDetails <get var="citydetails"/></srai>
+                    <get name="cityname"/> - <get name="population"/><br/>
+                <loop/>    
+                </li>
+            </condition>    
+        </template>
+    </category>
+        <category>
+        <pattern>TELL ME * TOWNS WITH THE LARGEST POPULATION</pattern>
+        <template>
+            <think><set name="count">0</set></think>
+            <condition name="count">
+                <li><value><star/></value></li>
+                <li>
+                    <think>
+                        <set var="citydetails"><map name="num2poleis"><get name="count"/></map></set>
+                        <set name="count"><map><name>successor</name><get name="count"/></map></set>
+                    </think>
+                    <srai>SetCityDetails <get var="citydetails"/></srai>
+                    <get name="cityname"/> - <get name="population"/><br/>
+                <loop/>    
+                </li>
+            </condition>    
+        </template>
+    </category>
+    
+    <category>
+        <pattern>TELL ME * CITIES WITH THE SMALLEST POPULATION</pattern>
+        <template>
+            <think>
+                <set name="count">0</set>
+                <set name="list">1186</set>
+            </think>
+            <condition name="count">
+                <li><value><star/></value></li>
+                <li>
+                    <think>
+                        <set var="citydetails"><map name="num2poleis"><get name="list"/></map></set>
+                        <set name="list"><map name="predecessor"><get name="list"/></map></set>
+                        <set name="count"><map><name>successor</name><get name="count"/></map></set>
+                    </think>
+                    <srai>SetCityDetails <get var="citydetails"/></srai>
+                    <get name="cityname"/> - <get name="population"/><br/>
+                <loop/>    
+                </li>
+            </condition>
+        </template>
+    </category>
+    <category>
+        <pattern>TELL ME * TOWNS WITH THE SMALLEST POPULATION</pattern>
+        <template>
+            <think>
+                <set name="count">0</set>
+                <set name="list">1186</set>
+            </think>
+            <condition name="count">
+                <li><value><star/></value></li>
+                <li>
+                    <think>
+                        <set var="citydetails"><map name="num2poleis"><get name="list"/></map></set>
+                        <set name="list"><map name="predecessor"><get name="list"/></map></set>
+                        <set name="count"><map><name>successor</name><get name="count"/></map></set>
+                    </think>
+                    <srai>SetCityDetails <get var="citydetails"/></srai>
+                    <get name="cityname"/> - <get name="population"/><br/>
+                <loop/>    
+                </li>
+            </condition>
+        </template>
+    </category>
+    
+   
+    
+    
+      <category>
+        <pattern>Πες μου * πόλεις με τον μεγαλύτερο πληθυσμό</pattern>
+        <template>
+            <think><set name="count">0</set></think>
+            <condition name="count">
+                <li><value><star/></value></li>
+                <li>
+                    <think>
+                        <set var="citydetails"><map name="num2poleisgr"><get name="count"/></map></set>
+                        <set name="count"><map><name>successor</name><get name="count"/></map></set>
+                    </think>
+                    <srai>SetCityDetails <get var="citydetails"/></srai>
+                    <get name="cityname"/> - <get name="population"/><br/>
+                <loop/>    
+                </li>
+            </condition>    
+        </template>
+    </category>
+    <category>
+        <pattern>Πες μου * πόλεις με τον μικρότερο πληθυσμό</pattern>
+        <template>
+            <think>
+                <set name="count">0</set>
+                <set name="list">1186</set>
+            </think>
+            <condition name="count">
+                <li><value><star/></value></li>
+                <li>
+                    <think>
+                        <set var="citydetails"><map name="num2poleisgr"><get name="list"/></map></set>
+                        <set name="list"><map name="predecessor"><get name="list"/></map></set>
+                        <set name="count"><map><name>successor</name><get name="count"/></map></set>
+                    </think>
+                    <srai>SetCityDetails <get var="citydetails"/></srai>
+                    <get name="cityname"/> - <get name="population"/><br/>
+                <loop/>    
+                </li>
+            </condition>
+        </template>
+    </category>
+    
+    
+</aiml>

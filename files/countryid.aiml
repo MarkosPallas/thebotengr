@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+<category>
+    <pattern>Tell me information about <set>countries</set>^</pattern>
+    <template>The capital of <star/> is <map name="countries2capital"><star/></map>.
+    The area of <star/> is <map name="xoraarea"><star/></map> Km2. 
+    <star/> is located in <map name="xoresipiroi"><star/></map>.
+    The population of <star/> is <map name="xoresplithismos"><star/></map> .
+    The currency of <star/> is <map name="xoranomisma"><star/></map>.
+    The most famous attraction in <star/> is <map name="xoresmnimia"><star/></map>.
+    </template>
+</category>
+<category>
+    <pattern>^ information about <set>countries</set>^</pattern>
+    <template>The capital of <star index="2"/> is <map name="countries2capital"><star index="2"/></map>.
+    The area of <star index="2"/> is <map name="xoraarea"><star index="2"/></map> Km2. 
+    <star index="2"/> is located in <map name="xoresipiroi"><star index="2"/></map>.
+    The population of <star index="2"/> is <map name="xoresplithismos"><star index="2"/></map> .
+    The currency of <star index="2"/> is <map name="xoranomisma"><star index="2"/></map>.
+    The most famous attraction in <star index="2"/> is <map name="xoresmnimia"><star index="2"/></map>.
+    </template>
+</category>
+
+<category>
+    <pattern>Πες μου πληροφορίες σχετικά με την χώρα <set>countries</set>^</pattern>
+    <template>Η πρωτεύουσα της χώρας <star/> είναι η <map name="countries2capital"><star/></map> ,
+    έχει έκταση <map name="xoraarea"><star/></map> τετραγωνικά χιλιόμετρα
+     και βρίσκεται στην ήπειρο <map name="xoresipiroi"><star/></map>.
+    Ο πληθυσμός της χώρας είναι <map name="xoresplithismos"><star/></map>.
+    Το νόμισμα της χώρας <star/> είναι <map name="xoranomisma"><star/></map>.
+    Ένα απο τα πολλά αξιοθέατα της χώρας  <star/> είναι <map name="xoresmnimia"><star/></map>.
+    </template>
+</category>
+<category>
+    <pattern>^ πληροφορίες σχετικά με την χώρα <set>countries</set>^</pattern>
+    <template>Η πρωτεύουσα της χώρας <star index="2"/> είναι η <map name="countries2capital"><star index="2"/></map>.
+    Η έκταση της χώρας <star index="2"/> είναι <map name="xoraarea"><star index="2"/></map> τετραγωνικά χιλιόμετρα
+     και βρίσκεται στην ήπειρο <map name="xoresipiroi"><star index="2"/></map>.
+    Ο πληθυσμός της χώρας <star index="2"/> είναι <map name="xoresplithismos"><star index="2"/></map>.
+    Το νόμισμα της χώρας <star index="2"/> είναι <map name="xoranomisma"><star index="2"/></map>.
+    Τα αξιοθέατα της χώρας  <star index="2"/> είναι <map name="xoresmnimia"><star index="2"/></map>.
+    </template>
+</category>
+<category>
+    <pattern>^ πληροφορίες για την χώρα <set>countries</set>^</pattern>
+    <template>Η πρωτεύουσα της χώρας είναι η <map name="countries2capital"><star index="2"/></map> ,
+    έχει έκταση <map name="xoraarea"><star index="2"/></map> τετραγωνικά χιλιόμετρα
+     και βρίσκεται στην ήπειρο <map name="xoresipiroi"><star index="2"/></map>.
+    Ο πληθυσμός της είναι <map name="xoresplithismos"><star index="2"/></map>.
+    Το νόμισμα της χώρας είναι <map name="xoranomisma"><star index="2"/></map>.
+    Ένα απο τα πολλά αξιοθέατα της χώρας  <star index="2"/> είναι <map name="xoresmnimia"><star index="2"/></map>.
+    </template>
+</category>
+<category>
+    <pattern>^ πληροφορίες για την <set>countries</set>^</pattern>
+    <template>Η πρωτεύουσα της χώρας <star index="2"/> είναι η <map name="countries2capital"><star index="2"/></map>.
+    Η έκταση της χώρας <star index="2"/> είναι <map name="xoraarea"><star index="2"/></map> τετραγωνικά χιλιόμετρα
+     και βρίσκεται στην ήπειρο <map name="xoresipiroi"><star index="2"/></map>.
+    Ο πληθυσμός της χώρας <star index="2"/> είναι <map name="xoresplithismos"><star index="2"/></map>.
+    Το νόμισμα της χώρας <star index="2"/> είναι <map name="xoranomisma"><star index="2"/></map>.
+    Τα αξιοθέατα της χώρας  <star index="2"/> είναι <map name="xoresmnimia"><star index="2"/></map>.
+    </template>
+</category>
+<category>
+    <pattern>^ πληροφορίες για <set>arthra</set> <set>countries</set>^</pattern>
+    <template>Η πρωτεύουσα για τη χώρα <star index="3"/> είναι η <map name="countries2capital"><star index="3"/></map>,
+    έχει έκταση <map name="xoraarea"><star index="3"/></map> τετραγωνικά χιλιόμετρα
+     και βρίσκεται στην <map name="xoresipiroi"><star index="3"/></map>.
+    Ο πληθυσμός της είναι <map name="xoresplithismos"><star index="3"/></map> και 
+    το νόμισμα της είναι <map name="xoranomisma"><star index="3"/></map>.
+    Ένα απο τα πολλά αξιοθέατα της χώρας  <star index="3"/> είναι <map name="xoresmnimia"><star index="3"/></map>.
+    </template>
+</category>
+</aiml>

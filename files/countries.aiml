@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+
+<category>
+    <pattern>What about countries</pattern>
+    <template>Do you like Greece</template>  
+</category>
+   
+<category>
+    <pattern>Yes</pattern>
+    <that>Do you like Greece</that>
+    <template>Nice, I like Greece too.</template>
+</category>
+   
+<category>
+    <pattern>No</pattern>
+    <that>Do you like Greece</that>
+    <template>Ok! But I like Greece very much.</template>
+</category> 
+
+<category>
+    <pattern>Which is the capital of <set>countries</set></pattern>
+    <template>The capital of <star/> is <map name="countries2capital"><star/></map>.
+    </template>
+</category>
+<category>
+    <pattern>What is the capital of <set>countries</set></pattern>
+    <template>The capital of <star/> is <map name="countries2capital"><star/></map>.
+    </template>
+</category>
+<category>
+    <pattern>Tell me the capital of <set>countries</set></pattern>
+    <template>The capital of <star/> is <map name="countries2capital"><star/></map>.
+    </template>
+</category>
+<category>
+    <pattern>^ capital ^</pattern>
+    <template>Ask me the capital of a country.
+    </template>
+</category>
+<category>
+    <pattern>^ capital of <set>countries</set></pattern>
+    <template>The capital of <star index ="2"/> is <map name="countries2capital"><star index="2"/></map>.
+    </template>
+</category>
+ 
+<category>
+ <pattern>Is <set>countries</set> a country of <set>ipeiroi</set>^</pattern>
+ <template> <star/> is country of <map name="xoresipiroi"><star/></map>.</template>
+ </category>
+ 
+<category>
+ <pattern>Is <set>countries</set> a country of ^</pattern>
+ <template>No, <star/> is a country of <map name="xoresipiroi"><star/></map>.</template>
+</category>
+ 
+<category>
+    <pattern>Is * a country ^</pattern>
+    <template>No, I don't think it is.</template>
+</category>
+<category>
+    <pattern>^ where is <set>countries</set></pattern>
+    <template><star index="2"/> is in <map name="xoresipiroi"><star index="2"/></map></template>
+</category>
+
+<category>
+    <pattern>How many continents are there </pattern>
+    <template>6</template>
+</category>
+<category>
+    <pattern>Which </pattern>
+    <that>6</that>
+    <template>
+        Asia<br/>
+        Africa<br/>
+        Europe<br/>
+        North America<br/>
+        South America<br/>
+        Oceania<break/>
+    </template>
+</category>
+<category>
+    <pattern>HOW MANY COUNTRIES ^ <set>ipeiroi</set></pattern>
+    <template>
+       <map name="ipeiroi2num"><star index="2"/></map>.
+    </template>    
+</category>
+<category>
+    <pattern>HOW MANY COUNTRIES ^</pattern>
+    <template>
+       Try ask me about countries number of a continent.
+    </template>    
+</category>
+ 
+<category>
+    <pattern>What about travelling</pattern>
+    <template>Which is the most interesting country you have been</template>  
+</category>
+<category>
+    <pattern><set>countries</set></pattern>
+    <that>Which is the most interesting country you have been</that>
+    <template><star/> is a beautiful country.</template>
+</category>
+
+
+<category>
+    <pattern>TELL ME ABOUT *</pattern>
+    <template>
+        <think>
+        <set name="countries"><star/></set>
+        </think>
+        Here is some information about <formal> <star/></formal>.
+        <button>
+        <text>Click here</text><url>https://en.wikipedia.org/wiki/<star/></url>
+        </button>
+    </template>
+</category>
+<category>
+    <pattern>SHOW ME A MAP OF *</pattern>
+    <template>
+        <think>
+        <set name="it"><star/></set>
+        </think>
+        Here is a map of<formal><star/></formal>.
+        <button>
+        <text>Click here</text>
+        <url>https://www.google.co.uk/maps?q=<star/></url>
+        </button>
+    </template>
+</category>
+<category>
+    <pattern>WHAT IS THE WEATHER IN *</pattern>
+    <template>
+        <think>
+        <set name="countries"><star/></set>
+        </think>
+        I hope it's a nice day in<formal><star/></formal>.
+        <button>
+        <text>Click here for the forecast</text>
+        <url>https://www.weather-forecast.com/locations/<star/>/forecasts/latest</url>
+        </button>
+    </template>
+</category>
+<category>
+    <pattern>TELL ME ABOUT IT</pattern>
+    <template>
+        <condition name="it">
+        <li value="*"><srai>Tell me about<get name="it"/></srai></li>
+        <li>Tell you about what?</li>
+        </condition>
+    </template>
+</category>
+    <category>
+    <pattern>SHOW ME A MAP OF IT</pattern>
+    <template>
+        <condition name="it">
+        <li value="*">
+        <srai>Show me a map of<get name="it"/></srai></li>
+        <li>A map of where?</li>
+        </condition>
+    </template>
+</category>
+<category>
+    <pattern>WHAT IS THE WEATHER LIKE THERE</pattern>
+    <template>
+    <condition name="it">
+        <li value="*">
+        <srai>What is the weather in<get name="it"/></srai>
+        </li>
+        <li>The weather where?</li>
+    </condition>
+    </template>
+</category>
+<category>
+    <pattern>*</pattern>
+    <that>TELL YOU ABOUT WHAT</that>
+    <template>
+    <srai>Tell me about<star/></srai>
+    </template>
+</category>
+<category>
+    <pattern>*</pattern>
+    <that>A MAP OF WHERE</that>
+    <template>
+    <srai>show me a map of<star/></srai>
+    </template>
+</category>
+<category>
+    <pattern>*</pattern>
+    <that>THe WEATHER WHERE</that>
+    <template>
+    <srai>what is the weather in<star/></srai>
+    </template>
+</category>
+
+
+<category>
+    <pattern>Ποια είναι η πρωτεύουσα της χώρας <set>countries</set>^</pattern>
+    <template><map name="countries2capital"><star/></map>.
+    </template>
+</category>
+
+<category>
+ <pattern>Είναι η τοποθεσία <set>countries</set> χώρα</pattern>
+ <template>Ναι η τοποθεσία, <star/> είναι χώρα.</template>
+ </category>
+ 
+<category>
+ <pattern>Είναι η τοποθεσία * χώρα ^</pattern>
+ <template>Όχι δεν νομίζω ότι είναι.</template>
+</category>
+
+<category>
+    <pattern>Ποια είναι η πρωτεύουσα της χώρας *</pattern>
+    <template>Δεν έχω απάντηση για αυτό.</template>
+</category>
+<category>
+    <pattern>^ πρωτεύουσα ^ <set>countries</set></pattern>
+    <template><map name="countries2capital"><star index="3"/></map>.</template>
+</category>
+<category>
+    <pattern>^ πρωτεύουσα ^</pattern>
+    <template>Ρώτα με για την πρωτεύουσα κάποιας χώρας.</template>
+</category>
+<category>
+    <pattern>πόσες ήπειροι υπάρχουν </pattern>
+    <template>6</template>
+</category>
+<category>
+    <pattern>ποιοί είναι</pattern>
+    <that>6</that>
+    <template>
+        Ασία<br/>
+        Αφρική<br/>
+        Ευρώπη<br/>
+        Βόρεια Αμερική<br/>
+        Νότια Αμερική<br/>
+        Ωκεανία<break/>
+    </template>
+</category>
+<category>
+    <pattern>Πόσες χώρες ^ <set>ipeiroi</set></pattern>
+    <template>
+       <map name="ipeiroi2num"><star index="2"/></map>.
+    </template>    
+</category>
+<category>
+    <pattern>Πόσες χώρες ^ </pattern>
+    <template>
+       Δοκίμασε να με ρωτήσεις πόσες χώρες έχει μια ήπειρος.
+    </template>    
+</category>
+
+
+
+<category>
+      <pattern>Μου αρέσει *</pattern>
+      <template>
+         και εμένα μου αρέσει <star/>.
+      </template>
+   </category>
+
+ 
+<category>
+<pattern>^ λίγα πράγματα για την χώρα *</pattern>
+<template>
+<think>
+<set name="countries"><star index="2"/></set>
+</think>
+Ορίστε μερικές πληροφορίες για <formal><star index="2"/></formal>.
+<button>
+<text>Πάτησε Εδώ</text><url>https://en.wikipedia.org/wiki/<star/></url>
+</button>
+</template>
+</category>
+<category>
+<pattern>Δείξε μου τον χάρτη της χώρας *</pattern>
+<template>
+<think>
+<set name="countries">
+<star/>
+</set>
+</think>
+Ορίστε ο χάρτης της χώρας  
+<formal>
+ <star/>
+</formal>
+.
+<button>
+<text>Πάτησε Εδώ</text>
+<url>
+https://www.google.co.uk/maps?q=
+<star/>
+</url>
+</button>
+</template>
+</category>
+<category>
+<pattern>Πες μου για τον καιρό στην χώρα *</pattern>
+<template>
+<think>
+<set name="countries">
+<star/>
+</set>
+</think>
+Ελπίζω να είναι μια καλή μέρα στην χώρα
+<formal>
+<star/>
+</formal>
+.
+<button>
+<text>Πάτησε εδώ για την πρόγνωση</text>
+<url>
+https://www.weather-forecast.com/locations/
+<star/>
+/forecasts/latest
+</url>
+</button>
+</template>
+</category>
+<category>
+<pattern>Πες μου σχετικά με αυτό</pattern>
+<template>
+<condition name="it">
+<li value="*">
+<srai>
+Πες μου σχετικά με αυτό
+<get name="it"/>
+</srai>
+</li>
+<li>Να σου πω σχετικά με τι?</li>
+</condition>
+</template>
+</category>
+<category>
+<pattern>Εμφάνισε ένα χάρτη της χώρας</pattern>
+<template>
+<condition name="it">
+<li value="*">
+<srai>
+Εμφάνισε ένα χάρτη της χώρας
+<get name="it"/>
+</srai>
+</li>
+<li>¨Ενα χάρτη ποιας χώρας?</li>
+</condition>
+</template>
+</category>
+<category>
+<pattern>Πως είναι ο καιρός σε αυτή την χώρα</pattern>
+<template>
+<condition name="it">
+<li value="*">
+<srai>
+Πως είναι ο καιρός στην χώρα?
+<get name="it"/>
+</srai>
+</li>
+<li>Ο καιρός σε ποια χώρα?</li>
+</condition>
+</template>
+</category>
+<category>
+<pattern>*</pattern>
+<that>Πες μου σχετικά με αυτό</that>
+<template>
+<srai>
+Πες μου σχετικά με αυτό
+<star/>
+</srai>
+</template>
+</category>
+<category>
+<pattern>*</pattern>
+<that>Ένα χάρτη μιας χώρας</that>
+<template>
+<srai>
+Εμφάνισε τον χάρτη της χώρας
+<star/>
+</srai>
+</template>
+</category>
+<category>
+<pattern>*</pattern>
+<that>Πως είναι ο καιρός</that>
+<template>
+<srai>
+Πως είναι ο καιρός στην χώρα
+<star/>
+</srai>
+</template>
+</category>
+
+</aiml>

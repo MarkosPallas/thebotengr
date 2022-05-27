@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+	<!-- insert your AIML categories here -->
+	
+<category>
+     <pattern>Which is the area of <set>countries</set></pattern>
+     <template><star/>, has area <map name="xoraarea"><star/></map> km^2. 
+     </template>
+ </category>
+ <category>
+     <pattern>What is the area of <set>countries</set></pattern>
+     <template><star/>, has area <map name="xoraarea"><star/></map> km^2. 
+     </template>
+ </category>
+ <category>
+     <pattern>^ area of <set>countries</set></pattern>
+     <template><star index="2"/>, has area <map name="xoraarea"><star index="2"/></map> km^2. 
+     </template>
+ </category>
+ <category>
+     <pattern>^ size of <set>countries</set></pattern>
+     <template><map name="xoraarea"><star index="2"/></map> km^2. 
+     </template>
+ </category>
+ <category>
+     <pattern>Tell me the area of <set>countries</set></pattern>
+     <template><star/>, has area <map name="xoraarea"><star/></map> km^2.
+     </template>
+ </category>
+ <category>
+     <pattern>^ area ^ <set>countries</set></pattern>
+     <template><star index="3"/>, has area <map name="xoraarea"><star index="3"/></map> km^2.</template>
+ </category>
+  <category>
+     <pattern>^ size ^ <set>countries</set></pattern>
+     <template><star index="3"/>, has area <map name="xoraarea"><star index="3"/></map> km^2.</template>
+ </category>
+  <category>
+     <pattern>^ area ^</pattern>
+     <template>Ask me the area of a country</template>
+ </category>
+   <category>
+     <pattern>^ size ^</pattern>
+     <template>Ask me the area of a country</template>
+ </category>
+ 
+ <category>
+     <pattern>^ έκταση της χώρας <set>countries</set>^</pattern>
+     <template>Η χώρα <star/>, έχει έκταση <map name="xoraarea"><star/></map> km^2.
+     </template>
+ </category>
+ <category>
+     <pattern>^ έκταση ^ <set>countries</set></pattern>
+     <template>Η χώρα <star index="3"/>, έχει έκταση <map name="xoraarea"><star index="3"/></map> km^2. 
+     </template>
+ </category>
+  <category>
+     <pattern>^ μέγεθος ^ <set>countries</set></pattern>
+     <template>Η χώρα <star index="3"/>, έχει έκταση <map name="xoraarea"><star index="3"/></map> km^2. 
+     </template>
+ </category>
+   <category>
+     <pattern>^ έκταση ^</pattern>
+     <template>Ρωτησέ με για την έκταση ή το μέγεθος μιας χώρας.</template>
+ </category>
+   <category>
+     <pattern>^ μέγεθος ^</pattern>
+     <template>Ρωτησέ με για το μέγεθος ή την έκταση μιας χώρας.</template>
+ </category>
+	
+</aiml>

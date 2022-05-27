@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+	<!-- insert your AIML categories here -->
+
+ <category>
+     <pattern>^ latitude ^ <set>countries</set></pattern>
+     <template><star index="3"/>, has latitude <map name="xoreslan"><star index="3"/></map>.
+     </template>
+ </category>
+  <category>
+     <pattern>^ latitude ^ </pattern>
+     <template>Ask me for the latitude of a country.
+     </template>
+ </category>
+ 
+ 
+  <category>
+     <pattern>^ γεωγραφικό πλάτος ^ <set>countries</set></pattern>
+     <template>Η χώρα <star index="3"/>, γεωγραφικό πλάτος <map name="xoreslan"><star index="3"/></map>.
+     </template>
+ </category>
+  <category>
+     <pattern>^ γεωγραφικό πλάτος ^ </pattern>
+     <template>Ρώτα με για το γεωγραφικό πλάτος μιας χώρας.
+     </template>
+ </category>
+ 
+</aiml>
